@@ -1,5 +1,16 @@
 ## 项目结构
 
+lang: Typescript
+
+Client：react, react-router,
+
+Sever: koa，tsnode
+
+中间件：
+
+- koa-router
+- koa-static
+
 样式: styled-components
 
 ## Todo
