@@ -1,0 +1,30 @@
+FROM mhart/alpine-node:11
+
+LABEL MAINTAINER="raleighy@163.com"
+
+# 安装nginx
+# RUN apk update && \ 
+#   apk add nginx
+
+# 替换nginx配置文件
+# COPY docker/nginx.conf /etc/nginx/nginx.conf
+# RUN rm -f /etc/nginx/conf.d/* /etc/nginx/sites-enabled/*
+# COPY docker/site.conf /etc/nginx/conf.d/
+
+# 安装node相关依赖
+COPY ./ /temp
+
+WORKDIR /temp
+
+RUN \
+  npm install yarn -g && \
+  yarn install && \
+  yarn build && \
+  mv ./build /build && \
+  mv ./asserts /asserts
+
+WORKDIR /
+
+RUN rm -rf /temp
+
+ENTRYPOINT ["node","build/server/main.js"]

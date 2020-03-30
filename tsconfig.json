@@ -1,0 +1,33 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "rootDir": "./",
+    "outDir": "build",
+    "baseUrl": ".",
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "paths": {
+      "@src/*": ["src/*"],
+      "@routes/*": ["src/routes/*"],
+      "@components/*": ["src/components/*"],
+      "@common/*": ["src/common/*"],
+      "@server/*": ["src/server/*"],
+      "@middleware/*": ["src/server/middleware/*"],
+      "@controller/*": ["src/server/controller/*"]
+    }
+  }
+}
